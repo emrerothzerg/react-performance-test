@@ -155,7 +155,7 @@ export default function App() {
             {itemsComparedTime}
             <br />
             <br />
-            Fn Result: {fnResult ? "TRUE" : "FALSE"}
+            <b>Fn Result:</b> {fnResult ? "TRUE" : "FALSE"}
           </p>
         ) : null}
         {showPayload ? <div>{JSON.stringify(items)}</div> : null}
@@ -171,5 +171,28 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (
+    <>
+      <p>
+        <b>Generate 300 items (same date)</b> {"--->"} Creates an item list with
+        300 items in it, all have the same itemActionDate
+      </p>
+      <p>
+        <b>Generate 300 items (unique date)</b> {"--->"} Creates an item list
+        with 300 items in it, all have a unique itemActionDate
+      </p>
+      <p>
+        <b>Toggle Payload</b> {"--->"} display the current item list
+      </p>
+      <p>
+        <b>Compare Now (DATE)</b> {"--->"} comparing by using new
+        Date(item.itemActionDate).getTime() === new
+        Date(items[0].itemActionDate).getTime()
+      </p>
+      <p>
+        <b>Compare Now (String)</b> {"--->"} comparing by using
+        item.itemActionDate === items[0].itemActionDate
+      </p>
+    </>
+  );
 }
