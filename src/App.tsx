@@ -49,22 +49,18 @@ export default function App() {
       const day = randomDay();
       const hour = randomHour();
 
+      const randomDate = `2020-${month < 10 ? "0" : ""}${month}-${
+        day < 10 ? "0" : ""
+      }${day}T${hour < 10 ? "0" : ""}${hour}:35:55.013Z`;
+
       const newItem = {
         itemNumber: "",
         itemPrice: "",
         itemName: "",
         itemShortDescription: "",
         itemQuantity: "",
-        totalPrice: new Date(
-          `2020-${month < 10 ? "0" : ""}${month}-${day < 10 ? "0" : ""}${day}T${
-            hour < 10 ? "0" : ""
-          }${hour}:35:55.013Z`
-        )
-          .getTime()
-          .toString(),
-        itemActionDate: `2020-${month < 10 ? "0" : ""}${month}-${
-          day < 10 ? "0" : ""
-        }${day}T${hour < 10 ? "0" : ""}${hour}:35:55.013Z`,
+        totalPrice: new Date(randomDate).getTime().toString(),
+        itemActionDate: randomDate,
       } as Item;
       setItems((items) => [...items, newItem]);
     }
