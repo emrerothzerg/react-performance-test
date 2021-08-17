@@ -59,7 +59,7 @@ export default function App() {
         itemName: "",
         itemShortDescription: "",
         itemQuantity: "",
-        totalPrice: new Date(randomDate).getTime().toString(),
+        totalPrice: "",
         itemActionDate: randomDate,
       } as Item;
       setItems((items) => [...items, newItem]);
@@ -75,7 +75,7 @@ export default function App() {
         itemName: "",
         itemShortDescription: "",
         itemQuantity: "",
-        totalPrice: new Date(`2020-09-14T15:35:55.013Z`).getTime().toString(),
+        totalPrice: "",
         itemActionDate: `2020-09-14T15:35:55.013Z`,
       } as Item;
       setItems((items) => [...items, newItem]);
